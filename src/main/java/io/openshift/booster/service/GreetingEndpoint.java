@@ -25,11 +25,13 @@ import org.springframework.stereotype.Component;
 
 @Path("/greeting")
 @Component
-public class GreetingEndpoint {
-    @GET
-    @Produces("application/json")
-    public Greeting greeting(@QueryParam("name") @DefaultValue("World") String name) {
-        final String message = String.format(Greeting.FORMAT, name);
-        return new Greeting(message);
-    }
+public class GreetingEndpoint
+{
+	@GET
+	@Produces("application/json")
+	public Greeting greeting(@QueryParam("name") @DefaultValue("World") String name)
+	{
+		final String message = String.format(Greeting.FORMAT, name);
+		return new Greeting("@MS---> "+message);
+	}
 }
